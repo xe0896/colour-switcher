@@ -1,0 +1,1 @@
+This program allows you to convert a white background in an image to another colour of your choice, created because I wanted to keep my Anki and Obsidian white background notes turn into the Anki or Obsidian background colour to make it look nicer.
