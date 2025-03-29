@@ -9,7 +9,7 @@ def open():
     if platform.system() == "Windows":
         import os
         os.startfile('output.png')
-    elif platform.sytem() == "Darwin":
+    elif platform.system() == "Darwin":
         subprocess.run(["open", 'output.png'])
     else:
         subprocess.run(["xdg-open"], 'output.png')
@@ -31,6 +31,12 @@ def display_image(image_path):
     screenshot = ImageTk.PhotoImage(image)
     image_label.config(image=screenshot)
     image_label.image = screenshot  # Prevent garbage collection
+
+
+def presets(R,G,B):
+    r.set(R)
+    g.set(G)
+    b.set(B)
 
 root = Tk()
 root.title("Color Switcher")
@@ -66,7 +72,9 @@ button_frame = ttk.Frame(mainframe)
 button_frame.grid(column=1, row=2, columnspan=6, sticky="ew")  # Full width
 
 ttk.Button(button_frame, text="Calculate", command=calculate).pack(side="left")
-ttk.Button(button_frame, text="Open", command=open).pack(side="right")
+ttk.Button(button_frame, text="Open", command=open).pack(side="left")
+ttk.Button(button_frame, text="Anki", command=lambda: presets("44", "44", "44")).pack(side="left")
+ttk.Button(button_frame, text="Obsidian", command=lambda: presets("30", "30", "30")).pack(side="left")
 
 # Image display - placed in its own row below everything else
 image_label = ttk.Label(mainframe)
