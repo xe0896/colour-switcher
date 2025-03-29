@@ -33,7 +33,7 @@ def display_image(image_path):
     image_label.image = screenshot  # Prevent garbage collection
 
 
-def presets(R,G,B):
+def presets(R,G,B): # Obsidian and Anki
     r.set(R)
     g.set(G)
     b.set(B)
